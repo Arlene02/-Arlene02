@@ -1,201 +1,427 @@
-:root {
-	--neutral-100: #f5f5f5;
-	--neutral-200: #d6d6d6;
-	--green-100: #cfdac8;
-	--green-200: #7c9473;
-	--green-300: #5b6d5b;
-	--green-400: #4a594a;
-	--pink-100: #f6e6e4;
-	--pink-200: #e2bcb7;
-	--pink-300: #ca8a8b;
-	--pink-400: #c07274;
-	--pink-500: #b35659;
-	--yellow-100: #fcf0d9;
-	--yellow-200: #f9e0ae;
-}
-
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-.canvas {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	display: grid;
-	place-items: center;
-	background: var(--pink-300);
-}
-
-.container {
-	position: relative;
-	width: 80vmin;
-	height: 80vmin;
-	background: var(--yellow-200);
-	border-radius: 50%;
-}
-
-/* pot */
-.pot {
-	position: absolute;
-	width: 50vmin;
-	height: 40vmin;
-	top: 50vmin;
-	left: 15vmin;
-	border-bottom: 30vmin solid var(--neutral-200);
-	border-right: 8vmin solid transparent;
-	border-left: 8vmin solid transparent;
-	border-radius: 2vmin;
-	transform: rotate(180deg);
-}
-
-.pot::before {
-	content: "";
-	position: absolute;
-	width: 25vmin;
-	height: 40vmin;
-	left: 17vmin;
-	border-bottom: 30vmin solid var(--neutral-100);
-	border-right: 8vmin solid transparent;
-	border-radius: 2vmin 0;
-}
-
-/* cactus prawn */
-.cactus-prawn {
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-bottom: 5vmin solid var(--yellow-100);
-	border-right: 0.4vmin solid transparent;
-	border-left: 0.4vmin solid transparent;
-}
-
-.cactus-prawn::before {
-	content: "";
-	position: absolute;
-	top: 1.3vmin;
-	left: -2vmin;
-	border-bottom: 5vmin solid var(--yellow-100);
-	border-right: 0.4vmin solid transparent;
-	border-left: 0.4vmin solid transparent;
-	transform: rotate(-45deg);
-}
-
-.cactus-prawn::after {
-	content: "";
-	position: absolute;
-	top: 1.4vmin;
-	left: 1.1vmin;
-	border-bottom: 5vmin solid var(--yellow-100);
-	border-right: 0.4vmin solid transparent;
-	border-left: 0.4vmin solid transparent;
-	transform: rotate(45deg);
-}
-
-/* cactus-small */
-.cactus-small {
-	position: absolute;
-	top: 30vmin;
-	left: 16vmin;
-	width: 25vmin;
-	height: 25vmin;
-	background: linear-gradient(to right, var(--green-200), var(--green-300));
-	border-radius: 50%;
-}
-
-/* cactus-small prawns*/
-.cactus-small .cactus-prawn:nth-of-type(1) {
-	top: 6vmin;
-	left: 4vmin;
-	transform: rotate(-30deg);
-}
-
-.cactus-small .cactus-prawn:nth-of-type(2) {
-	top: 9vmin;
-	left: 16vmin;
-	transform: rotate(20deg);
-}
-
-.cactus-small .cactus-prawn:nth-of-type(3) {
-	top: 15vmin;
-	left: 9vmin;
-	transform: rotate(-10deg);
-}
-
-/* cactus-large */
-.cactus-large {
-	position: absolute;
-	top: 15vmin;
-	left: 37vmin;
-	width: 25vmin;
-	height: 45vmin;
-	background: linear-gradient(to right, var(--green-200), var(--green-300));
-	border-radius: 40%;
-}
-
-/* cactus-large stripes */
-.cactus-large::before {
-	content: "";
-	position: absolute;
-	width: 15vmin;
-	height: 45vmin;
-	left: 5vmin;
-	border-radius: 40%;
-	border-left: 2vmin solid var(--green-300);
-	border-right: 2vmin solid var(--green-400);
-}
-
-/* cactus-large flower */
-.cactus-large-flower {
-	position: absolute;
-	left: 4.5vmin;
-	top: -5.5vmin;
-	width: 5vmin;
-	height: 9vmin;
-	background: radial-gradient(var(--pink-400), var(--pink-500));
-	border-radius: 45%;
-	transform: rotate(-30deg);
-}
-
-.cactus-large-flower::before {
-	content: "";
-	position: absolute;
-	left: 5.5vmin;
-	top: 2vmin;
-	width: 5vmin;
-	height: 9vmin;
-	background: inherit;
-	border-radius: 45%;
-	transform: rotate(30deg);
-}
-
-.cactus-large-flower::after {
-	content: "";
-	position: absolute;
-	left: 10vmin;
-	top: 5.5vmin;
-	width: 5vmin;
-	height: 9vmin;
-	background: inherit;
-	border-radius: 45%;
-	transform: rotate(60deg);
-}
-
-/* cactus-large prawns */
-.cactus-large .cactus-prawn:nth-of-type(2) {
-	top: -3vmin;
-	left: 10vmin;
-	transform: rotate(-5deg) scale(0.85);
-	opacity: 90%;
-}
-
-.cactus-large .cactus-prawn:nth-of-type(3) {
-	top: -3vmin;
-	left: 15vmin;
-	transform: rotate(15deg) scale(0.85);
-	opacity: 90%;
-}
+.left,.right{
+    display: inline-block;
+  /*   border: solid 2px black; */
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+  html, body{
+    border-top: solid 10px #4DA1A9;
+    border-bottom: solid 10px #4DA1A9;
+    padding: 0px;
+    margin: 0px;
+    background-color: #E8E8E8;
+  }
+  img{
+    position: relative;
+  /*   border: solid 1px; */
+    width: 45%;
+    left: 110px;
+    top: 30px;
+    margin-bottom: 50px;
+  }
+  .left{
+    width: 30%;
+    height: 1300px;
+    margin-left: 160px;
+  }
+  .right{
+    width: 40%;
+    height: 1300px;
+    margin-left: 110px;
+  }
+  .up_name{
+  /*   border: solid 1px; */
+    font-size: 45px;
+    letter-spacing: 2px;
+    font-family: Helvetica;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 30px;
+  }
+  .up_engname{
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+  .contact,.contact_email,.contact_phone{
+  /*   border: solid 1px; */
+    width: 100%;
+    font-family: Helvetica;
+  }
+  .contact{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
+  .contact_email,.contact_phone{
+    position: relative;
+    left: 40px;
+    line-height: 25px;
+    font-size: 18px;
+  }
+  .language{
+  /*   border: solid 1px; */
+    width: 100%;
+    font-family: Helvetica;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 60px;
+  }
+  .chinese,.english{
+    font-size: 18px;
+    font-family: Helvetica;
+    margin-top: 20px;
+    margin-left: 60px;
+  }
+  .chi_abilityouter,.eng_abilityouter{
+    border: solid 2px;
+    border-radius: 11px;
+    width: 300px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 5px;
+  }
+  .chi_abilityinner{
+    border: solid 2px;
+    background-color: #FFE066;
+    border-radius: 9px;
+    width: 290px;
+    height: 12px;
+    margin-top: 2px;
+    margin-left: 3px;
+  }
+  .chi_number,.eng_number{
+    font-family: Helvetica;
+    font-size: 15px;
+    text-align: right;
+    margin-right: 45px;
+    margin-top: 8px;
+  }
+  .eng_abilityinner{
+    border: solid 2px;
+    background-color: #FFE066;
+    border-radius: 11px;
+    width: 240px;
+    height: 12px;
+    margin-top: 2px;
+    margin-left: 3px;
+  }
+  .application{
+  /*   border: solid 1px; */
+    width: 100%;
+    font-family: Helvetica;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 60px;
+  }
+  .illus_icon{
+    display: inline-block;
+    border: solid 3px;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    font-family: Helvetica;
+    letter-spacing: 1px;
+    padding: 3px;
+    padding-left: 7px;
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 30px;
+  }
+  .illus_outer{
+    border: solid 2px;
+    border-radius: 11px;
+    width: 300px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 120px;
+  }
+  .illus_inn{
+    position: absolute;
+    border: solid 2px;
+    background-color: #FFE066;
+    border-radius: 9px;
+    width: 139px;
+    height: 12px;
+    margin-top: 2px;
+    margin-left: 3px;
+  } 
+  .illinn01{
+    display:inline-block;
+    border: dashed 1px;
+    width: 25%;
+    height: 20px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .illinn02{
+    position: relative;
+    display:inline-block;
+    border: dashed 1px;
+    width: 25% ;
+    height: 20px;
+    right: 8px; 
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .illinn03{
+    position: relative;
+    display: inline-block;
+    border: dashed 1px;
+    width: 75px;
+    height: 20px;
+    left: 55px;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .illus_word{
+  /*   border: solid 1px; */
+    position: relative;
+    display: inline;
+    font-size: 12px;
+    font-family: Helvetica; 
+    margin-right: 40px;
+    top: 2px;
+    left: 50px;
+  }
+  .ps_icon{
+    display: inline-block;
+    border: solid 3px;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    font-family: Helvetica;
+    padding: 4px;
+    padding-left: 5px;
+    padding-right: 9px;
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 65px;
+  }
+  .ps_outer{
+    border: solid 2px;
+    border-radius: 11px;
+    width: 300px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 140px;
+  }
+  .ps_inn{
+    position: absolute;
+    border: solid 2px;
+    background-color: #FFE066;
+    border-radius: 9px;
+    width: 110px;
+    height: 12px;
+    margin-top: 2px;
+    margin-left: 3px;
+  } 
+  .psinn01{
+    display:inline-block;
+    border: dashed 1px;
+    width: 25%;
+    height: 20px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .psinn02{
+    position: relative;
+    display:inline-block;
+    border: dashed 1px;
+    width: 25% ;
+    height: 20px;
+    right: 8px; 
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .psinn03{
+    position: relative;
+    display: inline-block;
+    border: dashed 1px;
+    width: 75px;
+    height: 20px;
+    left: 55px;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .ps_word{
+    position: relative;
+    display: inline;
+    font-size: 12px;
+    font-family: Helvetica; 
+    margin-right: 40px;
+    top: 2px;
+    left: 70px;
+  }
+  .school{
+  /*   border: solid 1px; */
+    width: 100%;
+    font-family: Helvetica;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 50px;
+  }
+  .circle1{
+    position: relative;
+    border: solid 2px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    left: 15px;
+    top: 43px;
+  }
+  .circle2{
+    position: relative;
+    border: solid 2px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    left: 35px;
+    top: 33px;
+  }
+  .ntust{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 28px;
+    font-size: 18px;
+    left: 40px;
+    margin-top: 20px;
+  }
+  .collage1{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 25px;
+    font-size: 16px;
+    left: 40px;
+  }
+  .collage{
+    position: relative;
+    left: 20px;
+  }
+  .ex_par{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 28px;
+    font-size: 18px;
+    left: 60px;
+    margin-top: 10px;
+  }
+  .ex_par2{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 25px;
+    font-size: 16px;
+    left: 60px;
+  }
+  .job{
+  /*   border: solid 1px; */
+    width: 100%;
+    font-family: Helvetica;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 50px;
+  }
+  .job1{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 28px;
+    font-size: 18px;
+    left: 60px;
+    margin-top: 20px;
+  }
+  .circle3{
+    position: relative;
+    border: solid 2px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    left: 35px;
+    top: 43px;
+  }
+  .circle4{
+    position: relative;
+    border: solid 2px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    left: 35px;
+    top: 33px;
+  }
+  .job11{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 25px;
+    font-size: 16px;
+    left: 60px;
+  }
+  .job2{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 28px;
+    font-size: 18px;
+    left: 60px;
+    margin-top: 10px;
+  }
+  .job12{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 25px;
+    font-size: 16px;
+    left: 60px;
+  }
+  .special{
+  /*   border: solid 1px; */
+    width: 100%;
+    font-family: Helvetica;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 50px;
+  }
+  .club{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 28px;
+    font-size: 18px;
+    left: 60px;
+    margin-top: 20px;
+  }
+  .club1{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 25px;
+    font-size: 16px;
+    left: 60px;
+  }
+  .other{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 28px;
+    font-size: 18px;
+    left: 60px;
+    margin-top: 10px;
+  }
+  .other1{
+    position: relative;
+    font-family: Helvetica;
+    line-height: 25px;
+    font-size: 16px;
+    left: 60px;
+  }
+  .end{
+    position: absolute;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 50px;
+    color: #BABABA;
+    letter-spacing: 2px;
+    margin-top: 100px;
+    margin-left: 320px;
+    white-space: nowrap;
+  }
